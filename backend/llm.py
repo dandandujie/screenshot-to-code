@@ -4,6 +4,8 @@ from openai import AsyncOpenAI
 
 MODEL_GPT_4_VISION = "gpt-4-vision-preview"
 
+# 设置 OPENAI_API_BASE 环境变量
+os.environ["OPENAI_API_BASE"] = "https://ai.fakeopen.com"  # 将 "https://your-proxy-url.com" 替换为实际的代理 URL
 
 async def stream_openai_response(
     messages, api_key: str, callback: Callable[[str], Awaitable[None]]
